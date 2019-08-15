@@ -40,7 +40,7 @@ export default {
   background: #b4dd41;
 }
 .showcard {
-  width:1600px;
+  width:103%;
   height: 750px;
   margin: -40px 0px 0px -120px;
 }

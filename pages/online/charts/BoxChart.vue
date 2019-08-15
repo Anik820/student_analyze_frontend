@@ -1,8 +1,8 @@
 <template>
-  <div id="boxchart" style="width: 1600px;height:950px;"></div>
+  <div id="boxchart" style="width: 100%;height:950px;"></div>
 </template>
 <script>
-import online_api from "@/api/online_api";
+import api from "@/api/api";
 import { mapGetters } from "vuex";
 export default {
   name: "BoxChart",
@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     init() {
-      online_api.getstuonlinetime(this.studentid).then(res => {
+      api.getstuonlinetime(this.studentid).then(res => {
         this.name = res["姓名"];
         this.accountnum = res["学号"];
         this.records = res["data"];
@@ -181,7 +181,49 @@ export default {
                 "2019-1-24",
                 "2019-1-25",
                 "2019-1-26",
-                "2019-1-27"
+                "2019-1-27",
+                "2019-1-28",
+                "2019-1-29",
+                "2019-1-30",
+                "2019-1-31",
+                "2019-2-01",
+                "2019-2-02",
+                "2019-2-03",
+                "2019-2-04",
+                "2019-2-05",
+                "2019-2-06",
+                "2019-2-07",
+                "2019-2-08",
+                "2019-2-09",
+                "2019-2-10",
+                "2019-2-11",
+                "2019-2-12",
+                "2019-2-13",
+                "2019-2-14",
+                "2019-2-15",
+                "2019-2-16",
+                "2019-2-17",
+                "2019-2-18",
+                "2019-2-19",
+                "2019-2-20",
+                "2019-2-21",
+                "2019-2-22",
+                "2019-2-23",
+                "2019-2-24",
+                "2019-2-25",
+                "2019-2-26",
+                "2019-2-27",
+                "2019-2-28",
+                "2019-2-29",
+                "2019-3-01",
+                "2019-3-02",
+                "2019-3-03",
+                "2019-3-04",
+                "2019-3-05",
+                "2019-3-06",
+                "2019-3-07",
+                "2019-3-08",
+                "2019-3-09",
               ]
             }
           ],

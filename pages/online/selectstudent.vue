@@ -87,7 +87,7 @@
 
 
 <script>
-import online_api from "@/api/online_api"
+import api from "@/api/api"
 import {mapActions} from 'vuex'
 
 export default {
@@ -206,7 +206,7 @@ export default {
       this.$refs.side1.toggleCollapse();
     },
     filterstudents (){
-      online_api.filterstudents(this.college,this.grade,this.keyword).then(res => {
+      api.filterstudents(this.college,this.grade,this.keyword).then(res => {
         this.tableData=res
       })
     }, 
@@ -218,7 +218,7 @@ export default {
       })
     },
     torandom(){
-      online_api.makerandomid().then(res => {
+      api.makerandomid().then(res => {
         this.addstudent(res[0])
         this.$router.push({
           name:'online_person'
@@ -240,7 +240,7 @@ export default {
 .normal {
   display: block;
   position: relative;
-  width: 1500px;
+  width: 90%;
   height: 500px;
   margin-left: 100px;
   margin-top: -30px;
@@ -264,7 +264,7 @@ export default {
   position:absolute;
   margin-left: 0px;
   margin-top :50px;
-  width: 1500px;
+  width: 90%;
   float:left;
   top:0;
   height:800px;

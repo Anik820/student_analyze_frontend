@@ -56,7 +56,7 @@
 import BarChart from '@/pages/online/charts/BarChart'
 import BoxChart from '@/pages/online/charts/BoxChart'
 import TrailMap from '@/pages/online/charts/TrailMap'
-import online_api from '@/api/online_api'
+import api from '@/api/api'
 import {mapGetters} from 'vuex'
 const colormap={
   '正常':'#99cc99',
@@ -141,7 +141,7 @@ export default {
   },
   methods: {
     init(){
-      online_api.getstudentstatus(this.studentid).then(res => {
+      api.getstudentstatus(this.studentid).then(res => {
         document.getElementById("bg").style.background=colormap[res["级别"]]
       })
     },
@@ -166,8 +166,8 @@ export default {
 .normal {
   position: absolute;
   display: block;
-  width: 1600px;
-  height: 500px;
+  width: 90%;
+  height: 80%;
   float:right;
   margin:auto;
 }
@@ -200,7 +200,7 @@ export default {
   width: 300px;
 }
 .carousel-person {
-  width: 1600px;
+  width: 99%;
   margin: 0px 0px 0px -90px;
   left:0%;
   position:absolute;

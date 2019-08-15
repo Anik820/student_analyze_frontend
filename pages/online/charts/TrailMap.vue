@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import online_api from "@/api/online_api";
+import api from "@/api/api";
 import { mapGetters } from "vuex";
 export default {
   name: "TrailMap",
@@ -21,7 +21,7 @@ export default {
     };
   },
   mounted() {
-    online_api.getbuildingcoord().then(res => {
+    api.getbuildingcoord().then(res => {
       this.buildingcoord = res.data;
     });
     this.init();
@@ -41,7 +41,7 @@ export default {
     },
     init() {
       let chart = this.$echarts.init(document.getElementById("trailmap"));
-      online_api.getsturoute(this.studentid).then(res => {
+      api.getsturoute(this.studentid).then(res => {
         this.name = res.data["姓名"];
         this.accountnum = res.data["学号"];
         this.trails = res.data["data"];

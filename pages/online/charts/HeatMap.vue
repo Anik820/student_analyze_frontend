@@ -1,18 +1,18 @@
 <template>
 <div>
 <col>
-<div id="bubble1" style="width:500px;height:700px;float:left"></div>
+<div id="bubble1" style="width:32%;height:700px;float:left"></div>
 </col>
 <col>
-<div id="heatmap" style="width:500px;height:700px;float:left;"></div>
+<div id="heatmap" style="width:33%;height:700px;float:left;"></div>
 </col>
 <col>
-<div id="bubble2" style="width:500px;height:700px;float:left"></div>
+<div id="bubble2" style="width:33%;height:700px;float:left"></div>
 </col>
 </div>
 </template>
 <script>
-import online_api from '@/api/online_api'
+import api from '@/api/api'
 
 export default{
     name:"HeatMap",
@@ -68,13 +68,13 @@ export default{
             }            
         },
         init(){
-            online_api.getbuildingcoord().then(res => {                
+            api.getbuildingcoord().then(res => {                
                 this.buildingcoord=res.data
                 for (let b in this.buildingcoord){
                     this.buildingname.push(b)
                 }                            
             })
-            online_api.getheatmap('2019-01-07').then(res => {
+            api.getheatmap('2019-01-07').then(res => {
                 let rawdata=res
                 this.data=[[],[],[],[],[]]
                 let count=0
@@ -586,7 +586,7 @@ export default{
                     bubble1chart.setOption(this.bubble1option,true)
                 })
                 bubble1chart.setOption(this.bubble1option)     
-                bubble2chart.setOption(this.bubble)       
+                bubble2chart.setOption(this.bubble2option)       
             })           
         }
     }

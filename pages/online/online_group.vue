@@ -63,7 +63,7 @@ export default {
   text-align: center;
 }
 .normal1 {
-  margin:100px 0px 0px 100px
+  margin:30px 0px 0px 0px
 }
 .el-carousel__item:nth-child(2n) {
   background-color: #99a9bf;
