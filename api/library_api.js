@@ -39,7 +39,7 @@ getperson_top_borrow(year){
   return get('v1/library/top_borrow/'+year)
 },
 getperson_compareschool(xh){
-  const path = 'http://localhost:5000/api/v1/library/person_compareschool';
+  const path = 'http://192.168.1.43:8001/api/v1/library/person_compareschool';
   
   return axios({
     url: path,
