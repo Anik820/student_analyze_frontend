@@ -7,7 +7,6 @@
 <script>
 import api from "../../api/study_api"
 import echarts from "echarts"
-import macarons from 'echarts/theme/macarons'
 
 export default {
   data() {
@@ -21,23 +20,22 @@ export default {
       attribute: [],
       drilldata: [],
       color:[
-            '#60acfc',
-            '#32d3eb',
-            '#a79feb',
-            '#d4ec59',
-            '#63d5b2',
-            '#c37cca',
-            '#9cdc82',
-            '#ffdb5c',
-            '#fb6e6c',
-            '#fca8a6',
-            '#abafed',
-            '#9fcdfd',
-            '#9fe6b8',
-            '#ff9f7f',
-            '#fb7293',
-            '#747be1',
-            '#e7bcf3',
+            "#516b91",
+            "#569ae2",
+            "#a5dff9",
+            "#94d8e1",
+            "#82ddc1",
+            "#afe39b",
+            "#e5f39b",
+            "#ffe88e",
+            "#fbffb9",
+            "rgba(255,175,175,0.43)",
+            "rgba(255,175,175,0.76)",
+            "rgba(240,124,158,0.73)",
+            "#d29dd7",
+            "rgba(189,183,240,0.86)",
+            "rgba(131,121,207,0.82)",
+            "#686eca"
           ],//设置图表颜色
     };
     
@@ -49,7 +47,7 @@ export default {
     const that = this;
     window.onresize = () => {
       //  根据窗口大小调整曲线大小
-      let chart2 = this.$echarts.init(document.getElementById("double_degree"),'macarons');
+      let chart2 = this.$echarts.init(document.getElementById("double_degree"),'study_16colors');
       chart2.resize();
     };
   },
@@ -58,7 +56,7 @@ export default {
       this.charts();
     },
     charts() {
-      let chart2 = this.$echarts.init(document.getElementById("double_degree"),'macarons');
+      let chart2 = this.$echarts.init(document.getElementById("double_degree"),'study_16colors');
 
       api.getdouble_degree(2, "新闻学").then(res => {
         let servicedata = [];

@@ -156,7 +156,7 @@ export default {
   methods: {
     // 获取个人统计总信息数据
     getTotalData(id) {
-      const path = 'http://192.168.1.43:8001/student_consumption/totalTimesMoney';
+      const path = 'http://192.168.1.43:8001/student/consume/student_consumption/totalTimesMoney';
       axios({
         url: path,
         method: 'post',
@@ -177,7 +177,7 @@ export default {
     },
     // 从数据库获取数据：
     getMealTimes(id) {
-      const path = 'http://192.168.1.43:8001/student_consumption/mealTimes';
+      const path = 'http://192.168.1.43:8001/student/consume/student_consumption/mealTimes';
       console.log(id);
       axios({
         url: path,
@@ -207,7 +207,7 @@ export default {
     },
     // 从数据库中获取各个类型的消费数据
     getConsumeType(id) {
-      const path = 'http://192.168.1.43:8001/student_consumption/consumeType';
+      const path = 'http://192.168.1.43:8001/student/consume/student_consumption/consumeType';
       axios({
         url: path,
         method: 'post',
@@ -228,7 +228,7 @@ export default {
     },
     // 从数据库获取三种的消费金额以及各个餐厅的消费情况
     getTypeMoney(id) {
-      const path = 'http://192.168.1.43:8001/student_consumption/typeMoney';
+      const path = 'http://192.168.1.43:8001/student/consume/student_consumption/typeMoney';
       axios({
         url: path,
         method: 'post',
@@ -255,7 +255,7 @@ export default {
     },
     // 从数据库中获取在各个窗口的消费次数的统计情况
     getWindowNum(id) {
-      const path = 'http://192.168.1.43:8001/student_consumption/windowNum';
+      const path = 'http://192.168.1.43:8001/student/consume/student_consumption/windowNum';
       axios({
         url: path,
         method: 'post',
@@ -275,7 +275,7 @@ export default {
     },
     //从数据库中获取每个学生在各个餐厅的消费次数，以及各个餐厅的经纬度信息
     getEatingHall(id) {
-      const path = 'http://192.168.1.43:8001/student_consumption/eatingHall';
+      const path = 'http://192.168.1.43:8001/student/consume/student_consumption/eatingHall';
       axios({
         url: path,
         method: 'post',
@@ -291,7 +291,7 @@ export default {
     },
     // 从数据库汇获取每个学生每个月的消费总额已经每个月各类型消费的金额
     getMonthTypeMoney(id) {
-      const path = 'http://192.168.1.43:8001/student_consumption/monthTypeMoney';
+      const path = 'http://192.168.1.43:8001/student/consume/student_consumption/monthTypeMoney';
       axios({
         url: path,
         method: 'post',
@@ -311,7 +311,7 @@ export default {
     },
     // 获取某学生的就餐率相关数据
     getDiningRate(id) {
-      const path = 'http://192.168.1.43:8001/student_consumption/getDiningRate';
+      const path = 'http://192.168.1.43:8001/student/consume/student_consumption/getDiningRate';
       axios({
         url: path,
         method: 'post',
@@ -681,7 +681,7 @@ export default {
       this.getMonthTypeMoney(this.value);
     },
     getTypeAcademyGender() {
-      const path ='http://192.168.1.43:8001/group_consumption/getTypeAcademyGender';
+      const path ='http://192.168.1.43:8001/student/consume/group_consumption/getTypeAcademyGender';
       axios({
         url: path,
         method: 'get'

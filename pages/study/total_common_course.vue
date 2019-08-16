@@ -10,14 +10,14 @@
       <Content :style="{padding: '0 50px'}">
         <div class="main">
           <Card :bordered="false" style="height:600px;width:49%;float:left;">
-            <p slot="title">课程学生专业分布情况</p>
+            <p slot="title">各专业通识课成绩</p>
             <div>
               <common_course_bar></common_course_bar>
             </div>
           </Card>
 
           <Card :bordered="false" style="height:600px;width:49%;float:right;">
-            <p slot="title">各学院开设专业情况</p>
+            <p slot="title">各学院通识课成绩</p>
             <div>
               <common_course_rose></common_course_rose>
             </div>

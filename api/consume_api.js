@@ -1,12 +1,13 @@
 import axios from 'axios'
 import Vue from 'vue'
 
-axios.defaults.baseURL = 'http://127.0.0.1:5000'
+//axios.defaults.baseURL = 'http://192.168.1.43:8001'
 Vue.prototype.$http = axios
 axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 axios.defaults.xsrfCookieName = 'csrftoken'
 axios.withCredentials = true
 
+const urlprefix='http://192.168.1.43:8001/student/consume/'
 export default {
     getprofessional_elective(id) {
         console.log(id)
@@ -27,7 +28,7 @@ function get(url, options) {
     return new Promise((resolve, reject) => {
 
         //   console.log({params})
-        axios.get(url, { params })
+        axios.get(urlprefix+url, { params })
             .then(res => {
                 // if (res.data.error !== null) {
                 // //   Vue.prototype.$message({

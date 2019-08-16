@@ -1,8 +1,8 @@
 <template>
-  <div id="barchart" style="width: 1600px;height:950px;"></div>
+  <div id="barchart" style="width: 1600px;height:800px;"></div>
 </template>
 <script>
-import api from "@/api/api";
+import online_api from "@/api/online_api";
 import {mapGetters} from 'vuex'
 export default {
   name: "BarChart",
@@ -101,7 +101,7 @@ export default {
         "第17周",
         "第18周"
       ];
-      api.getstuonlinesort(this.studentid).then(res => {
+      online_api.getstuonlinesort(this.studentid).then(res => {
         this.weekdata = this.weekdataFormatter(res);
         this.weekwebdata = this.websitedataFormatter(res);
         this.option = {

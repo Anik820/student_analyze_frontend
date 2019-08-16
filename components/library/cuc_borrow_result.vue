@@ -117,7 +117,7 @@ export default {
     },
     testoptions() {
       return {
-        color: ["#7fbcfc"],
+        // color: ["#7fbcfc"],
         grid:{
           bottom:"30px",//组件离容器下侧的距离,百分比字符串或整型数字
         },
@@ -182,6 +182,21 @@ export default {
             name: "图书借阅数目",
             type: "bar",
             data: this.series_data,
+            itemStyle: {
+              normal: {
+                //颜色渐变
+                color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                  {
+                    offset: 0,
+                    color: "#569ae2"
+                  },
+                  {
+                    offset: 1,
+                    color: "#a5dff9" //"#a5dff9"
+                  }
+                ])
+              }
+            },
             barGap: 10,
             areaStyle: {}
           }
@@ -190,7 +205,10 @@ export default {
     },
     test2options(drilldata,data) {
       return {
-        color: ["#ffdb5c"],
+        // color: ["#ffdb5c"],
+        grid:{
+          bottom:"30px",//组件离容器下侧的距离,百分比字符串或整型数字
+        },
         title: {
           text: data+"年各月借阅数目",
           x: "center"
@@ -252,6 +270,21 @@ export default {
             name: "借阅数目",
             type: "bar",
             data: drilldata[2],
+            itemStyle: {
+              normal: {
+                //颜色渐变
+                color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                  {
+                    offset: 0,
+                    color: "#ffdb5c"
+                  },
+                  {
+                    offset: 1,
+                    color: "#fbffb9" //"#a5dff9"
+                  }
+                ])
+              }
+            },
             barGap: 10,
             areaStyle: {}
           }

@@ -19,7 +19,7 @@
           </div>
           <div class="chart-content">
             <Card :bordered="false" style="height:500px;width:49%;float:left;">
-              <p slot="title">课程学生专业分布情况</p>
+              <p slot="title">学生专业分布情况</p>
               <div id="pie" style="width:100%;height:350px"></div>
             </Card>
             <Card :bordered="false" style="height:500px;width:49%;float:right;">
@@ -35,10 +35,9 @@
 
 
 <script>
-import { METHODS } from "http"
-import api from "@/api/study_api"
-import echarts from "echarts"
-import macarons from 'echarts/theme/macarons'
+import { METHODS } from "http";
+import api from "@/api/study_api";
+import echarts from "echarts";
 export default {
   data() {
     return {
@@ -1493,7 +1492,23 @@ export default {
           ]
         }
       ],
-      color:['#60acfc']
+      color: [
+        "#516b91",
+        "#569ae2",
+        "#a5dff9",
+        "#94d8e1",
+        "#82ddc1",
+        "#afe39b",
+        "#e5f39b",
+        "#ffe88e",
+        "rgba(255,175,175,0.43)",
+        "rgba(255,175,175,0.76)",
+        "rgba(240,124,158,0.73)",
+        "#d29dd7",
+        "rgba(189,183,240,0.86)",
+        "rgba(131,121,207,0.82)",
+        "#686eca"
+      ] //设置图表颜色
     };
   },
 
@@ -1502,7 +1517,7 @@ export default {
     this.test2options();
     window.onresize = () => {
       //  根据窗口大小调整曲线大小
-      let mychart1 = this.$echarts.init(document.getElementById("pie"),'macarons');
+      let mychart1 = this.$echarts.init(document.getElementById("pie"));
       let mychart2 = this.$echarts.init(document.getElementById("bar"));
       mychart2.resize();
       mychart1.resize();
@@ -1541,8 +1556,7 @@ export default {
       });
     },
     testoptions() {
-      let mychart1 = echarts.init(document.getElementById("pie"),'macarons');
-      
+      let mychart1 = echarts.init(document.getElementById("pie"), "macarons");
 
       // 把配置和数据放这里
       mychart1.setOption({
@@ -1551,6 +1565,7 @@ export default {
           subtext: this.kec,
           x: "center"
         },
+        color: this.color,
         tooltip: {
           trigger: "item",
           formatter: "{a} <br/>{b} : {c} ({d}%)"
@@ -1579,22 +1594,21 @@ export default {
           }
         ]
       });
-       mychart1.resize();
+      mychart1.resize();
       /* window.addEventListener("resize", function() {
         mychart1.resize();
       }); */
     },
     test2options() {
-      let mychart2 = this.$echarts.init(document.getElementById("bar"),'macarons');
-      
+      let mychart2 = this.$echarts.init(document.getElementById("bar"));
+
       // 把配置和数据放这里
       mychart2.setOption({
-        
         title: {
           // text: "各学院开设专业数",
           x: "center"
         },
-        color:this.color,
+        color: this.color,
         tooltip: {},
         legend: {
           x: "20px",
@@ -1650,6 +1664,21 @@ export default {
             name: "开设专业数",
             type: "bar",
             data: this.bar_data,
+            itemStyle: {
+              normal: {
+                //颜色渐变
+                color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                  {
+                    offset: 0,
+                    color: "#569ae2"
+                  },
+                  {
+                    offset: 1,
+                    color: "rgba(189,183,240,0.86)" //"#a5dff9"
+                  }
+                ])
+              }
+            },
             barGap: 10,
             areaStyle: {}
           }

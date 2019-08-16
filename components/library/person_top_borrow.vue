@@ -15,7 +15,7 @@ export default {
   data() {
     return {
       echartdata: [],
-      color: ["#9fcdfd"]
+      // color: ["#9fcdfd"]
     };
   },
   mounted() {
@@ -33,9 +33,9 @@ export default {
       let years = "2012";
       api.getperson_top_borrow(2012).then(res => {
         mychart1.setOption({
-          color: this.color,
+          // color: this.color,
           title: {
-            text: "全校借阅Top10",
+            // text: "全校借阅Top10",
             subtext: "全校数据来源"
           },
           tooltip: {
@@ -65,7 +65,22 @@ export default {
             {
               name: years + "年",
               type: "bar",
-              data: res.stu_borrow
+              data: res.stu_borrow,
+              itemStyle: {
+              normal: {
+                //颜色渐变
+                color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                  {
+                    offset: 0,
+                    color: "#569ae2"
+                  },
+                  {
+                    offset: 1,
+                    color: "#a5dff9" //"#a5dff9"
+                  }
+                ])
+              }
+            },
             }
           ]
         });

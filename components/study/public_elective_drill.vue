@@ -73,7 +73,7 @@ export default {
             this.drilldata[0] = servicedata.name;
             this.drilldata[1] = res.coursename;
             this.drilldata[2] = servicedata;
-            chart.setOption(this.test2options(this.drilldata,data));
+            chart.setOption(this.test2options(this.drilldata, data));
             chart.resize();
             console.log(this.drilldata[1]);
           });
@@ -85,7 +85,7 @@ export default {
         grid: {
           bottom: "30px" //组件离容器下侧的距离,百分比字符串或整型数字
         },
-        color: ["#7fbcfc"],
+        // color: ["#7fbcfc"],
         title: {
           text: "各学院开设公选课情况",
           x: "center"
@@ -172,17 +172,32 @@ export default {
             name: "公选课开设数目",
             type: "bar",
             data: this.series_data,
+            itemStyle: {
+              normal: {
+                //颜色渐变
+                color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                  {
+                    offset: 0,
+                    color: "#569ae2"
+                  },
+                  {
+                    offset: 1,
+                    color: "#a5dff9" //"#a5dff9"
+                  }
+                ])
+              }
+            },
             barGap: 10,
             areaStyle: {}
           }
         ]
       };
     },
-    test2options(drilldata,data) {
+    test2options(drilldata, data) {
       return {
-        color: ["#ffdb5c"],
+        // color: ["#ffdb5c"],
         title: {
-          text: data+"开设公选课选课人数",
+          text: data + "开设公选课选课人数",
           x: "center"
         },
         tooltip: {},
@@ -242,6 +257,21 @@ export default {
             name: "图书借阅数",
             type: "bar",
             data: drilldata[2],
+            itemStyle: {
+              normal: {
+                //颜色渐变
+                color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                  {
+                    offset: 0,
+                    color: "#ffdb5c"
+                  },
+                  {
+                    offset: 1,
+                    color: "#fbffb9" //"#a5dff9"
+                  }
+                ])
+              }
+            },
             barGap: 10,
             areaStyle: {}
           }

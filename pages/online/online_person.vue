@@ -56,7 +56,7 @@
 import BarChart from '@/pages/online/charts/BarChart'
 import BoxChart from '@/pages/online/charts/BoxChart'
 import TrailMap from '@/pages/online/charts/TrailMap'
-import api from '@/api/api'
+import online_api from '@/api/online_api'
 import {mapGetters} from 'vuex'
 const colormap={
   '正常':'#99cc99',
@@ -141,7 +141,7 @@ export default {
   },
   methods: {
     init(){
-      api.getstudentstatus(this.studentid).then(res => {
+      online_api.getstudentstatus(this.studentid).then(res => {
         document.getElementById("bg").style.background=colormap[res["级别"]]
       })
     },
@@ -167,7 +167,6 @@ export default {
   position: absolute;
   display: block;
   width: 90%;
-  height: 80%;
   float:right;
   margin:auto;
 }

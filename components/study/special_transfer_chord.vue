@@ -61,11 +61,11 @@ export default {
             enabled:false
           },//去掉水印
           colors:[
-            '#5facfc',
-            '#5bc39e',
-            '#d4ec5a',
-            '#ffb64d',
-            '#fa816e',
+            '#a5dff9',
+            '#afe39b',
+            '#ffe88e',
+            'rgba(255,175,175,0.76)',
+            'rgba(189,183,240,0.86)',
           ],//设置图表颜色
           title: {
             text: ""

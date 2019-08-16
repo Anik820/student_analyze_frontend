@@ -2,7 +2,7 @@
 <div id="collegefreq" style="width:100%;height:800px;"></div>
 </template>
 <script>
-import api from '@/api/api'
+import online_api from '@/api/online_api'
 
 export default{
     name:"CollegeFreq",
@@ -24,7 +24,7 @@ export default{
     },
     methods: {
         init() {
-            api.getcollegefreq().then(res =>{
+            online_api.getcollegefreq().then(res =>{
                 let data=res
                 this.dataset[0]=['college']
                 this.cnum=data[0].data.length

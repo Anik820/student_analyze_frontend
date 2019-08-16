@@ -14,7 +14,25 @@ require("echarts-wordcloud");
 export default {
   data() {
     return {
-      echartdata: []
+      echartdata: [],
+      color:[
+            "#516b91",
+            "#569ae2",
+            "#a5dff9",
+            "#94d8e1",
+            "#82ddc1",
+            "#afe39b",
+            "#e5f39b",
+            "#ffe88e",
+            "#fbffb9",
+            "rgba(255,175,175,0.43)",
+            "rgba(255,175,175,0.76)",
+            "rgba(240,124,158,0.73)",
+            "#d29dd7",
+            "rgba(189,183,240,0.86)",
+            "rgba(131,121,207,0.82)",
+            "#686eca"
+        ],
     };
   },
   mounted() {
@@ -54,6 +72,7 @@ export default {
 
         mychart.setOption({
           show: true,
+          colors:this.color,
           title: {
             text: "",
             subtext: "",

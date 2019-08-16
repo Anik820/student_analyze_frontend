@@ -46,7 +46,7 @@ export default {
               // 坐标轴线
               lineStyle: {
                 // 属性lineStyle控制线条样式
-                color: [[0.2, "#9afd"], [0.8, "#9fcdfd"], [1, "#c3eab4"]]
+                color: [[0.2, "#9afd"], [0.8, "#9fcdfd"], [1, "#516b91"]]
               }
             },
             data: [{ value: 50, name: "平均分数" }],

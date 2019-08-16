@@ -1,7 +1,7 @@
 <template>
 <div>
     <Card :bordered="false" style="width:100%;height:500px;float:left;margin-bottom:10px;margin:10px auto">
-              <p slot="title">必修本课程的班级情况</p>
+              <p slot="title">专业必修课情况</p>
               <div align="center">
               <div align="center" id="compulsory" style="width:100%;height:380px">
               </div>
@@ -9,7 +9,7 @@
               </div>
           </Card>
           <Card :bordered="false" style="width:100%;height:500px;float:left;margin-bottom:10px;margin:10px auto">
-              <p slot="title">各班级平均分、最高分、挂科率情况</p>
+              <p slot="title">各班级成绩情况</p>
               <div align="center" id="tes" style="width:100%;height:380px">
               </div>
           </Card>
@@ -253,8 +253,8 @@ export default {
         enabled: false
     }, //去掉highcharts水印
     colors:[
-        '#7fbcfc',
-        '#afe39b',
+        '#60acfc',
+        '#516b91',
     ],
 	title: {
 		text: '各班级分数列表'

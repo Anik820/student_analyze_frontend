@@ -1,8 +1,8 @@
 <template>
-  <div id="boxchart" style="width: 100%;height:950px;"></div>
+  <div id="boxchart" style="width: 100%;height:800px;"></div>
 </template>
 <script>
-import api from "@/api/api";
+import online_api from "@/api/online_api";
 import { mapGetters } from "vuex";
 export default {
   name: "BoxChart",
@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     init() {
-      api.getstuonlinetime(this.studentid).then(res => {
+      online_api.getstuonlinetime(this.studentid).then(res => {
         this.name = res["姓名"];
         this.accountnum = res["学号"];
         this.records = res["data"];

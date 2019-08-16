@@ -100,7 +100,8 @@ export default {
   methods: {
     // 各个餐厅的消费次数
     getConsumptionList() {
-      const path = 'http://192.168.1.43:8001/group_consumption/mealTimes';
+      const path = 'http://192.168.1.43:8001/student/consume/group_consumption/mealTimes';
+      
       axios({
         url: path,
         method: 'get'
@@ -133,7 +134,7 @@ export default {
     },
     // 每个窗口的消费次数
     getWindowNum() {
-      const path = 'http://192.168.1.43:8001/group_consumption/windowTimes';
+      const path = 'http://192.168.1.43:8001/student/consume/group_consumption/windowTimes';
       axios({
         url:path,
         method: 'get'
@@ -153,7 +154,7 @@ export default {
     },
     // 各种类型的消费金额
     getConsumeType() {
-      const path = 'http://192.168.1.43:8001/group_consumption/consumeType';
+      const path = 'http://192.168.1.43:8001/student/consume/group_consumption/consumeType';
       axios({
         url: path,
         method: 'get'
@@ -170,7 +171,7 @@ export default {
     },
     // 获取各类型的消费金额以及各个类型下的消费数据
     getTypeEatingMoney() {
-      const path = 'http://192.168.1.43:8001/group_consumption/typeEatingMoney';
+      const path = 'http://192.168.1.43:8001/student/consume/group_consumption/typeEatingMoney';
       axios({
         url: path,
         method: 'get'
@@ -194,7 +195,7 @@ export default {
     },
     // 获取不同性别下每个月的各类消费金额
     getGenderMoney() {
-      const path = 'http://192.168.1.43:8001/group_consumption/genderClassify';
+      const path = 'http://192.168.1.43:8001/student/consume/group_consumption/genderClassify';
       axios({
         url: path,
         method: 'get'
@@ -222,7 +223,7 @@ export default {
     },
     // 获取各个年级下的不同类型的消费金额
     getEnrollment() {
-      const path = 'http://192.168.1.43:8001/group_consumption/enrollmentClassify';
+      const path = 'http://192.168.1.43:8001/student/consume/group_consumption/enrollmentClassify';
       axios({
         url: path,
         method: 'get'
@@ -246,7 +247,7 @@ export default {
     },
     // 获取每个年级下的不同月份的消费金额
     getEnrollmentMonth() {
-      const path = 'http://192.168.1.43:8001/group_consumption/enrollmentMonthConsume';
+      const path = 'http://192.168.1.43:8001/student/consume/group_consumption/enrollmentMonthConsume';
       axios({
         url: path,
         method: 'get'
@@ -262,7 +263,7 @@ export default {
     },
     // 获取每个学院下的群体不同类型的消费金额
     getAcademyType() {
-      const path = 'http://192.168.1.43:8001/group_consumption/academyType';
+      const path = 'http://192.168.1.43:8001/student/consume/group_consumption/academyType';
       axios({
         url: path,
         method: 'get'
@@ -279,7 +280,7 @@ export default {
     },
     // 获取每个餐厅以及各个餐厅下的所有窗口的消费次数的情况
     getHallWindowTimes() {
-      const path = 'http://192.168.1.43:8001/group_consumption/hall_window_times';
+      const path = 'http://192.168.1.43:8001/student/consume/group_consumption/hall_window_times';
       axios({
         url: path,
         method: 'get'

@@ -12,7 +12,7 @@
 </div>
 </template>
 <script>
-import api from '@/api/api'
+import online_api from '@/api/online_api'
 
 export default{
     name:"HeatMap",
@@ -68,13 +68,13 @@ export default{
             }            
         },
         init(){
-            api.getbuildingcoord().then(res => {                
+            online_api.getbuildingcoord().then(res => {                
                 this.buildingcoord=res.data
                 for (let b in this.buildingcoord){
                     this.buildingname.push(b)
                 }                            
             })
-            api.getheatmap('2019-01-07').then(res => {
+            online_api.getheatmap('2019-01-07').then(res => {
                 let rawdata=res
                 this.data=[[],[],[],[],[]]
                 let count=0

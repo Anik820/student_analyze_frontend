@@ -52,7 +52,7 @@ export default {
         credits: {
           enabled: false
         }, //去掉水印
-        colors: ["#9afd"], //设置图表颜色
+        colors: ["#9fcdfd"], //设置图表颜色
         title: {
           text: "公选课成绩情况"
         },

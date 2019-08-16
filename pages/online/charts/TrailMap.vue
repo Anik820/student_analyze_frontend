@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div id="trailmap" style="width: 1600px;height:950px;"></div>
+    <div id="trailmap" style="width: 1600px;height:800px;"></div>
   </div>
 </template>
 <script>
-import api from "@/api/api";
+import online_api from "@/api/online_api";
 import { mapGetters } from "vuex";
 export default {
   name: "TrailMap",
@@ -21,7 +21,7 @@ export default {
     };
   },
   mounted() {
-    api.getbuildingcoord().then(res => {
+    online_api.getbuildingcoord().then(res => {
       this.buildingcoord = res.data;
     });
     this.init();
@@ -41,7 +41,7 @@ export default {
     },
     init() {
       let chart = this.$echarts.init(document.getElementById("trailmap"));
-      api.getsturoute(this.studentid).then(res => {
+      online_api.getsturoute(this.studentid).then(res => {
         this.name = res.data["姓名"];
         this.accountnum = res.data["学号"];
         this.trails = res.data["data"];

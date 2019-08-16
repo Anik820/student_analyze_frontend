@@ -6,6 +6,8 @@ axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 axios.defaults.xsrfCookieName = 'csrftoken'
 axios.withCredentials = true
 
+const urlprefix='http://192.168.1.43:8000/api/student/online/'
+
 export default {
   getpiedata() {
     return online_get('kindcollect')
@@ -67,7 +69,7 @@ function online_get(url, options) {
   return new Promise((resolve, reject) => {
 
     //   console.log({params})
-    axios.get('http://192.168.1.43:8000/api/'+url, { params })
+    axios.get(urlprefix+url, { params })
       .then(res => {
         // if (res.data.error !== null) {
         // //   Vue.prototype.$message({

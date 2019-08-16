@@ -12,6 +12,7 @@ import api from "../../api/study_api";
 import echarts from "echarts";
 import Highcharts from "highcharts";
 import highchartsMore from "highcharts/highcharts-more";
+import '@/color/study_3colors.js'
 highchartsMore(Highcharts);
 
 export default {
@@ -40,9 +41,12 @@ export default {
             enabled:false
           },//去掉水印
           colors:[
-            '#a79feb',//'#9afd',
+            '#516b91',
             '#9fcdfd',
-            '#c3eab4',
+            '#9afd',
+            // '#a79feb',//'#9afd',
+            // '#9fcdfd',
+            // '#c3eab4',
           ],//设置图表颜色
           title: {
             text: "学生必修课成绩对比"

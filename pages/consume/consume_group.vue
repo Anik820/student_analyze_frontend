@@ -74,7 +74,7 @@ export default {
     },
     // 获取全校、男生、女生、各个学院的消费金额
     getTypeAcademyGender() {
-      const path ='http://192.168.1.43:8001/group_consumption/getTypeAcademyGender';
+      const path ='http://192.168.1.43:8001/student/consume/group_consumption/getTypeAcademyGender';
       axios({
         url: path,
         method: 'get'
