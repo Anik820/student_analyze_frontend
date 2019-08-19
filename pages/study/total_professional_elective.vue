@@ -1513,8 +1513,10 @@ export default {
   },
 
   mounted() {
+    
     this.testoptions();
     this.test2options();
+    this.init();
     window.onresize = () => {
       //  根据窗口大小调整曲线大小
       let mychart1 = this.$echarts.init(document.getElementById("pie"));
@@ -1524,6 +1526,9 @@ export default {
     };
   },
   methods: {
+    init() {
+      this.changeData(["电视学院", 16, "视听传播概论"]);
+    },
     changeData(value, selectedData) {
       let xy = value[0];
       let nj = value[1];

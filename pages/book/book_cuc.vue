@@ -27,9 +27,9 @@
             :bordered="false"
             style="width:100%;height:600px;float:left;margin-top:30px;margin:30px auto"
           >
-            <p slot="title">借书类型偏好</p>
+            <p slot="title">全校学生借书偏好</p>
             <div align="center">
-              <!-- <cuc_booktype_school></cuc_booktype_school> -->
+              <cuc_booktype_school></cuc_booktype_school>
             </div>
           </Card>
         </div>

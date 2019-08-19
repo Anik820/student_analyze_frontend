@@ -5,16 +5,16 @@
         <BreadcrumbItem to="/onlineindex">上网行为</BreadcrumbItem>
         <BreadcrumbItem to="/selectstudent">学生个人上网行为</BreadcrumbItem>
       </Breadcrumb>
-      <Content :style="{padding: '20px 50px 0 75px'}">
+      <Content :style="{padding: '10px 25px 0 38px'}">
         <div class="div-inputting">
         </div>
         <div class="normal">
           <Card class="selectcard">
           <el-row :gutter="20">
-            <el-col :span="3">
+            <el-col :span="2">
               <el-card class="invisible-card"></el-card>
             </el-col>
-            <el-col :span="2">
+            <el-col :span="3">
               <h2 class="label">选择条件</h2>
             </el-col>
             <el-col :span="5">
@@ -58,15 +58,15 @@
               </el-table-column>
               <el-table-column prop="学号"
                                label="学号"
-                               width="400">
+                               width="300">
               </el-table-column>
               <el-table-column prop="姓名"
                                label="姓名"
-                               width="300">
+                               width="250">
               </el-table-column>
               <el-table-column prop="学院"
                                label="学院"
-                               width="300">
+                               width="250">
               </el-table-column>
               <el-table-column prop="dealing"
                                label="操作">
@@ -240,21 +240,21 @@ export default {
 .normal {
   display: block;
   position: relative;
-  width: 90%;
-  height: 500px;
-  margin-left: 100px;
-  margin-top: -30px;
+  width: 800px;
+  height: 700px;
+  margin-left: 50px;
+  margin-top: 0px;
 }
 
 .invisible-card {
   opacity: 0;
 }
 .select_person {
-  width: 240px;
+  width: 120px;
 }
 .table_style {
   width: 100%;
-  padding-top: 20px;
+  padding-top: 10px;
   margin: auto;
 }
 .label{
@@ -263,10 +263,10 @@ export default {
 .selectcard{
   position:absolute;
   margin-left: 0px;
-  margin-top :50px;
-  width: 90%;
+  margin-top :20px;
+  width: 1200px;
   float:left;
   top:0;
-  height:800px;
+  height:700px;
 }
 </style>

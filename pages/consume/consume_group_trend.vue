@@ -14,30 +14,31 @@
             </Card>
           <Card :bordered="false" style="width:25%;height:680px;float:right;margin-left:1%;">
             <br><br>
-            <font size="2">全校消费总金额</font><span style="color:rgb(173, 203, 62);font-size:22px">{{genderAcademyCalculate['academyStudents']['Result']['总额']|numFilter}}</span><font size="2">万</font><br><br>
+            <font size="2">全校消费总金额</font><span style="color:#a5def1;font-size:22px">{{genderAcademyCalculate['academyStudents']['Result']['总额']|numFilter}}</span><font size="2">万</font><br><br>
             <font size="2">全校生活类型消费金额</font><span style="color:rgb(62, 203, 176);font-size:22px">{{genderAcademyCalculate['academyStudents']['Result']['生活']|numFilter}}</span><font size="2">万</font><br><br>
-            <font size="2">全校购物类型消费金额</font><span style="color:rgb(203, 62, 185);font-size:22px">{{genderAcademyCalculate['academyStudents']['Result']['购物']|numFilter}}</span><font size="2">万</font><br><br>
+            <font size="2">全校购物类型消费金额</font><span style="color:#FFAFAF;font-size:22px">{{genderAcademyCalculate['academyStudents']['Result']['购物']|numFilter}}</span><font size="2">万</font><br><br>
             <font size="2">全校餐饮类型消费金额</font><span style="color:rgb(203, 126, 62);font-size:22px">{{genderAcademyCalculate['academyStudents']['Result']['餐饮']|numFilter}}</span><font size="2">万</font><br><br><br>
-            <font size="2">全校消费金额最多学院</font><span style="color:rgb(173, 203, 62);font-size:22px">{{genderAcademyCalculate['totalMaxName']}}</span><br><br>
-            <font size="2">其消费金额为</font><span style="color:rgb(203, 62, 185);font-size:22px">{{genderAcademyCalculate['totalMaxMoney']|numFilter}}</span><font size="2">万</font><br><br>
-            <font size="2">人均消费最多的学院</font><span style="color:rgb(173, 203, 62);font-size:22px">{{genderAcademyCalculate['totalMaxAverageName']}}</span><br><br>
-            <font size="2">其消费金额为</font><span style="color:rgb(203, 62, 185);font-size:22px">{{genderAcademyCalculate['totalMaxAverageMoney']|numFilter}}</span><font size="2">元</font><br><br>
-            <font size="2">人均消费最少的学院</font><span style="color:rgb(173, 203, 62);font-size:22px">{{genderAcademyCalculate['totalMinAverageName']}}</span><br><br>
-            <font size="2">其消费金额为</font><span style="color:rgb(203, 62, 185);font-size:22px">{{genderAcademyCalculate['totalMinAverageMoney']|numFilter}}</span><font size="2">元</font><br><br>
+            <font size="2">全校消费金额最多学院</font><span style="color:#70afce;font-size:22px">{{genderAcademyCalculate['totalMaxName']}}</span><br><br>
+            <font size="2">其消费金额为</font><span style="color:#F49A9C;font-size:22px">{{genderAcademyCalculate['totalMaxMoney']|numFilter}}</span><font size="2">万</font><br><br>
+            <font size="2">人均消费最多的学院</font><span style="color:#70afce;font-size:22px">{{genderAcademyCalculate['totalMaxAverageName']}}</span><br><br>
+            <font size="2">其消费金额为</font><span style="color:#F49A9C;font-size:22px">{{genderAcademyCalculate['totalMaxAverageMoney']|numFilter}}</span><font size="2">元</font><br><br>
+            <font size="2">人均消费最少的学院</font><span style="color:#70afce;font-size:22px">{{genderAcademyCalculate['totalMinAverageName']}}</span><br><br>
+            <font size="2">其消费金额为</font><span style="color:#F49A9C;font-size:22px">{{genderAcademyCalculate['totalMinAverageMoney']|numFilter}}</span><font size="2">元</font><br><br>
           </Card>
           <Card :bordered="false" style="width:25%;height:680px;float:left;margin-top:50px;">
-            <br><br>
-            <font size="2">全校男生消费总金额</font><span style="color:rgb(173, 203, 62);font-size:22px">{{genderAcademyCalculate['totalStudents']['boyResult']['总额']|numFilter}}</span><font size="2">万</font><br><br>
-            <font size="2">全校男生生活类型消费金额</font><span style="color:rgb(62, 203, 176);font-size:22px">{{genderAcademyCalculate['totalStudents']['boyResult']['生活']|numFilter}}</span><font size="2">万</font><br><br>
-            <font size="2">全校男生购物类型消费金额</font><span style="color:rgb(203, 62, 185);font-size:22px">{{genderAcademyCalculate['totalStudents']['boyResult']['购物']|numFilter}}</span><font size="2">万</font><br><br>
-            <font size="2">全校男生餐饮类型消费金额</font><span style="color:rgb(203, 126, 62);font-size:22px">{{genderAcademyCalculate['totalStudents']['boyResult']['餐饮']|numFilter}}</span><font size="2">万</font><br><br>
-            <font size="2">全校男生人均消费金额</font><span style="color:rgb(173, 203, 62);font-size:22px">{{genderAcademyCalculate['academyStudents']['boyResult']['总额']|numFilter}}</span><font size="2">元</font><br><br><br>   
+            <img :src="imgUrl1" width="50" height="50" ><br>
+            <font size="2">全校男生消费总金额</font><span style="color:rgb(86, 154, 226);font-size:22px">{{genderAcademyCalculate['totalStudents']['boyResult']['总额']|numFilter}}</span><font size="2">万</font><br><br>
+            <font size="2">全校男生生活类型消费金额</font><span style="color:rgb(86, 154, 226)font-size:22px">{{genderAcademyCalculate['totalStudents']['boyResult']['生活']|numFilter}}</span><font size="2">万</font><br><br>
+            <font size="2">全校男生购物类型消费金额</font><span style="color:rgb(86, 154, 226);font-size:22px">{{genderAcademyCalculate['totalStudents']['boyResult']['购物']|numFilter}}</span><font size="2">万</font><br><br>
+            <font size="2">全校男生餐饮类型消费金额</font><span style="color:rgb(86, 154, 226);font-size:22px">{{genderAcademyCalculate['totalStudents']['boyResult']['餐饮']|numFilter}}</span><font size="2">万</font><br><br>
+            <font size="2">全校男生人均消费金额</font><span style="color:rgb(86, 154, 226);font-size:22px">{{genderAcademyCalculate['academyStudents']['boyResult']['总额']|numFilter}}</span><font size="2">元</font><br><br><br>   
             
-            <font size="2">全校女生消费总金额</font><span style="color:rgb(173, 203, 62);font-size:22px">{{genderAcademyCalculate['totalStudents']['girlResult']['总额']|numFilter}}</span><font size="2">万</font><br><br> 
-            <font size="2">全校女生生活类型消费金额</font><span style="color:rgb(62, 203, 176);font-size:22px">{{genderAcademyCalculate['totalStudents']['girlResult']['生活']|numFilter}}</span><font size="2">万</font><br><br>
-            <font size="2">全校女生购物类型消费金额</font><span style="color:rgb(203, 62, 185);font-size:22px">{{genderAcademyCalculate['totalStudents']['girlResult']['购物']|numFilter}}</span><font size="2">万</font><br><br>
-            <font size="2">全校女生餐饮类型消费金额</font><span style="color:rgb(203, 126, 62);font-size:22px">{{genderAcademyCalculate['totalStudents']['girlResult']['餐饮']|numFilter}}</span><font size="2">万</font><br><br>
-            <font size="2">全校女生人均消费金额</font><span style="color:rgb(173, 203, 62);font-size:22px">{{genderAcademyCalculate['academyStudents']['girlResult']['总额']|numFilter}}</span><font size="2">元</font><br><br><br>
+            <img :src="imgUrl2" width="50" height="50" ><br>
+            <font size="2">全校女生消费总金额</font><span style="color:rgba(240,124,158);font-size:22px">{{genderAcademyCalculate['totalStudents']['girlResult']['总额']|numFilter}}</span><font size="2">万</font><br><br> 
+            <font size="2">全校女生生活类型消费金额</font><span style="color:rgba(240,124,158);font-size:22px">{{genderAcademyCalculate['totalStudents']['girlResult']['生活']|numFilter}}</span><font size="2">万</font><br><br>
+            <font size="2">全校女生购物类型消费金额</font><span style="color:rgba(240,124,158);font-size:22px">{{genderAcademyCalculate['totalStudents']['girlResult']['购物']|numFilter}}</span><font size="2">万</font><br><br>
+            <font size="2">全校女生餐饮类型消费金额</font><span style="color:rgba(240,124,158);font-size:22px">{{genderAcademyCalculate['totalStudents']['girlResult']['餐饮']|numFilter}}</span><font size="2">万</font><br><br>
+            <font size="2">全校女生人均消费金额</font><span style="color:rgba(240,124,158);font-size:22px">{{genderAcademyCalculate['academyStudents']['girlResult']['总额']|numFilter}}</span><font size="2">元</font><br><br><br>
           </Card>   
           <Card :bordered="false" style="width:74%;height:680px;float:right;margin-left:1%;margin-top:50px;" >
             <div style="width:100%;height:650px;float:right" id="myMixtureEcharts"></div>
@@ -115,7 +116,9 @@ export default {
       hallWindowTimes: {},
       hallName: [],
       series: [],
-      genderAcademyCalculate: {}
+      genderAcademyCalculate: {},
+      imgUrl1:require("../../assets/nan.png"),
+      imgUrl2:require("../../assets/nv.png")
     };
   },
   components: {
@@ -335,7 +338,7 @@ export default {
         console.error(error);
       });
     },
-    // 堆叠柱状图
+    // 堆叠柱状图(男女)
     initMixtureChart(index0,index1,index2,index3,index00,index11,index22,index33) {
       console.log(index1);
       let chart = echarts.init(document.getElementById("myMixtureEcharts"));
@@ -354,6 +357,7 @@ export default {
             }             
           }
         },
+        color:["#70afce","#F49A9C",],
         legend: {
           top:25,
           data: ['月总消费(男)', '生活消费(男)', '餐饮消费(男)', '购物消费(男)', '消费趋势(男)', '月总消费(女)', '生活消费(女)', '餐饮消费(女)', '购物消费(女)', '消费趋势(女)']
@@ -544,6 +548,7 @@ export default {
         
         }) ;
     },
+    //学院柱状图
     initZoomChart(index){
       let chart = echarts.init(document.getElementById("myAcademyEcharts"));
       console.log(index);
@@ -554,6 +559,7 @@ export default {
         tooltip : {
             trigger: 'axis'
         },
+        color:["#70afce","#FFAFAF","#a5def1","#fed3e0",],
         legend: {
             data:['餐饮', '生活', '购物']
         },

@@ -47,8 +47,6 @@ export default {
           obj.value = res.public_num[i];
           servicedata[i] = obj;
         }
-        console.log(servicedata);
-
         this.legend_data = servicedata.name;
         this.xAxis_data = this.attribute;
         this.series_data = servicedata;

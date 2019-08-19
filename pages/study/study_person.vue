@@ -8,24 +8,19 @@
   
       <Content :style="{padding: '0 60px'}">
         <div class="main">
-          <Card :bordered="false" style="width:100%;height:500px;float:left;margin-bottom:10px;margin:10px auto">
-              <p slot="title">个人学业分析</p>
               <div class="search">
-                <i-input :value.sync="value" placeholder="请输入查询学号" style="width: 250px"></i-input>&nbsp;&nbsp;&nbsp;&nbsp;
-                <i-button type="primary" shape="circle" icon="ios-search"></i-button>
+                <i-input :value.sync="value" placeholder="请输入查询学号" style="width: 250px" v-model="stuid"></i-input>&nbsp;&nbsp;&nbsp;&nbsp;
+                <i-button type="primary" shape="circle" icon="ios-search" @click="this.submit"></i-button>
               </div>
-              <div>
-                
-              </div>
-          </Card>
-          <Card :bordered="false" style="height:600px;width:49%;float:left;margin-bottom:10px;margin:10px auto">
+          
+          <Card :bordered="false" style="height:600px;width:49%;float:left;margin-bottom:20px;margin:10px auto">
             <p slot="title">该生专业必修课成绩</p>
             <div align="center">
               <person_professional_compulsory></person_professional_compulsory>
             </div>
           </Card>
 
-          <Card :bordered="false" style="height:600px;width:49%;float:right;margin-bottom:10px;margin:10px auto">
+          <Card :bordered="false" style="height:600px;width:49%;float:right;margin-bottom:20px;margin:10px auto">
             <p slot="title">该生专业选修课成绩</p>
             <div align="center">
               <person_professional_elective></person_professional_elective>
@@ -50,12 +45,13 @@
   </div>
 </template>
 
-
 <script>
 import person_professional_compulsory from '@/components/study/person_professional_compulsory'
 import person_professional_elective from '@/components/study/person_professional_elective'
 import person_common_course from '@/components/study/person_common_course'
 import person_public_elective from '@/components/study/person_public_elective'
+import { METHODS } from 'http';
+import Bus from '@/components/bus.js'
 
 export default {
   components:{
@@ -66,8 +62,21 @@ export default {
   },
   data () {
     return {
-      value1: 0
+      value1: 0,
+      param:[]
     }
+  },
+  mounted(){
+    this.init()
+  },
+  methods:{
+    init(){
+        //this.param = "201600101012";
+    },
+    submit(){
+        this.param = this.stuid;
+        Bus.$emit('val', this.param)
+    },
   }
 }
 </script>
@@ -89,7 +98,7 @@ export default {
   .search{
     -ms-flex: 100%; /* IE10 */
     flex: 100%;   
-    padding: 20px;
+    padding: 0 0 5px 0;
   }
   .chart-content{
     -ms-flex: 100%; /* IE10 */

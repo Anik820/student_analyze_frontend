@@ -77,8 +77,8 @@ export default {
       return {
         color:this.color,
         title: {
-          text: "双学位学生专业分布情况",
-          //subtext:  "选课",
+          // text: "双学位学生专业分布情况",
+          subtext:  "学院分布情况",
           x: "center"
         },
         tooltip: {

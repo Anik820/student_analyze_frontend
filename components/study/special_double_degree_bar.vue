@@ -66,7 +66,7 @@ export default {
       };
       return {
         title: {
-          text: "双学位课程选课人数",
+          // text: "双学位课程选课人数",
           x: "center"
         },
         tooltip: {},
@@ -131,7 +131,7 @@ export default {
                   },
                   {
                     offset: 1,
-                    color: "#a5dff9" //"#a5dff9"
+                    color: "rgba(189,183,240,0.86)" //"#a5dff9"
                   }
                 ])
               }

@@ -22,14 +22,14 @@
             </div>
             <div v-if="this.currentchart==2">
                <h2>当前：{{this.date.toLocaleDateString()}}</h2>
-               <DatePicker type="date" :options="options_date" v-model="date" placeholder="Select date" size="large" style="width: 250px"></DatePicker>
+               <DatePicker type="date" :options="options_date" v-model="date" placeholder="Select date" size="large" style="width: 125px"></DatePicker>
             </div>
         </Col>
         <Col span="20">
         <div class="normal">
             <el-carousel :interval="4000"
                          :autoplay="false"
-                         height="950px"
+                         height="750px"
                          class="carousel-person"
                          indicator-position="outside"
                          @change="setcurrent">
@@ -166,7 +166,8 @@ export default {
 .normal {
   position: absolute;
   display: block;
-  width: 90%;
+  width: 1200;
+  height: 900;
   float:right;
   margin:auto;
 }
@@ -187,20 +188,20 @@ export default {
   background-color: #d3dce6;
 }
 .p-test {
-  padding: 5px 0px 0px 10px;
+  padding: 2px 0px 0px 5px;
 }
 .p-test2 {
-  padding: 5px 0px 0px 40px;
+  padding: 2px 0px 0px 20px;
 }
 .el-row{
   position:absolute;
 }
 .input-test {
-  width: 300px;
+  width: 150px;
 }
 .carousel-person {
-  width: 99%;
-  margin: 0px 0px 0px -90px;
+  width: 1200px;
+  margin: -17px 0px 0px -45px;
   left:0%;
   position:absolute;
   float:right;
@@ -209,6 +210,6 @@ export default {
   opacity: 0;
 }
 .select_person {
-  width: 240px;
+  width: 120px;
 }
 </style>

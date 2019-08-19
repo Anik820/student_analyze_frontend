@@ -34,7 +34,7 @@ export default {
         mychart2.setOption({
           color: this.color,
           title: {
-            text: "阅读量对比图"
+            // text: "阅读量对比图"
           },
           tooltip: {
             trigger: "axis"
@@ -66,8 +66,9 @@ export default {
             type: "slider",
             realtime: true, //拖动滚动条时是否动态的更新图表数据
             height: 25, //滚动条高度
-            start: 40, //滚动条开始位置（共100等份）
-            end: 65 //结束位置（共100等份）
+            start: 0, //滚动条开始位置（共100等份）
+            end: 100, //结束位置（共100等份）
+            zoomOnMouseWheel:true,
             }
           ],
           series: [

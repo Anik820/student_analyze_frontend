@@ -7,11 +7,11 @@
 
       <Content :style="{padding: '70px 50px 0 75px'}">
           <div class="normal">
-          <el-carousel :interval="4000" type="card" height="500px">
-            <el-carousel-item v-for="item in 3" :key="item"> 
-              <h3 class="medium">{{ item }}</h3>
+          <el-carousel :interval="4000" type="card" height="600px">
+            <el-carousel-item v-for="item in imagesbox" :key="item.id">
+              <img :src="item.idView" class="image">
             </el-carousel-item>
-          </el-carousel>
+        </el-carousel>
           </div>
         </Content>
     </Layout>
@@ -23,7 +23,12 @@
 export default {
   data () {
     return {
-      value1: 0
+      // value1: 0,
+      isCollapsed: false,
+            imagesbox:
+            [{id:0,idView:require("../../assets/book1.jpg")},      
+            {id:1,idView:require("../../assets/book2.jpg")},
+            {id:2,idView:require("../../assets/book3.jpg")}]
     }
   }
 }

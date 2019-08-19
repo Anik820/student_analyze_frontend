@@ -67,7 +67,8 @@ export default {
             enabled: false
           }, //去掉highcharts水印
           title: {
-            text: "学部、学院阅读量对比"
+            text: "借阅量对比"
+           
           },
           tooltip: {
             useHTML: true,

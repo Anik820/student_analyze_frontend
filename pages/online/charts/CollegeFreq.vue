@@ -1,5 +1,5 @@
 <template>
-<div id="collegefreq" style="width:100%;height:800px;"></div>
+<div id="collegefreq" style="width:1600px;height:700px;"></div>
 </template>
 <script>
 import online_api from '@/api/online_api'
@@ -140,7 +140,7 @@ export default{
                         gridIndex: 1
                     },
                     polar: {
-                        center: ['22%','51%']
+                        center: ['24%','51%']
                         },
                     series: this.series
                 }

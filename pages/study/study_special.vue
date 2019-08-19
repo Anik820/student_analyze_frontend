@@ -7,8 +7,8 @@
       </Breadcrumb>
     <Content :style="{padding: '0 60px'}">
         <div class="main">
-          <Card :bordered="false" style="width:100%;height:400px;float:left;margin-bottom:10px;margin:10px auto">
-              <p slot="title">辅修双学位情况</p>
+          <Card :bordered="false" style="width:100%;height:430px;float:left;margin-bottom:10px;margin:10px auto">
+              <p slot="title">辅修双学位学生来源</p>
               <div>
                 <special_double_degree_pie></special_double_degree_pie>
               </div>

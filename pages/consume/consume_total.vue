@@ -12,9 +12,9 @@
               <p slot="title">全校群体消费情况</p>
                 <div style="width:100%">
                     <Timeline>
-                      <TimelineItem color="green" ><font size="2">全校学生账户总数量为</font><span style="color:rgb(173, 203, 62);font-size:22px">{{totalStudents}}</span><font size="2">人</font></TimelineItem>
-                      <TimelineItem color="green"><font size="2">一卡通交易总次数为</font><span style="color:rgb(62, 203, 176);font-size:22px">{{totalTimes}}</span><font size="2">次</font></TimelineItem>
-                      <TimelineItem color="red"><font size="2">一卡通交易总金额为</font><span style="color:rgb(203, 62, 185);font-size:22px">{{totalMoney}}</span><font size="2">元</font></TimelineItem>
+                      <TimelineItem color="green" ><font size="2">全校学生账户总数量为</font><span style="color:rgb(203, 126, 62);font-size:22px"><countTo :startVal='startVal' :endVal='totalStudents' :duration='duration'></countTo></span><font size="2">人</font></TimelineItem>
+                      <TimelineItem color="green"><font size="2">一卡通交易总次数为</font><span style="color:rgb(62, 203, 176);font-size:22px"><countTo :startVal='startVal' :endVal='totalTimes' :duration='duration'></countTo></span><font size="2">次</font></TimelineItem>
+                      <TimelineItem color="red"><font size="2">一卡通交易总金额为</font><span style="color:rgb(203, 62, 185);font-size:22px"><countTo :startVal='startVal' :endVal='totalMoney' :duration='duration'></countTo></span><font size="2">元</font></TimelineItem>
                       <TimelineItem color="red"><font size="2">全校热门消费餐厅为</font><span style="color:rgb(173, 203, 62);font-size:22px">{{hotHall}}</span></TimelineItem>
                       <TimelineItem color="blue"><font size="2">全校热门消费窗口为</font><span style="color:rgb(203, 126, 62);font-size:22px">{{hotWindow}}</span></TimelineItem>
                       <TimelineItem color="blue"><font size="2">全校消费最高学院为</font><span style="color:rgb(0, 255, 0);font-size:22px">{{highAcademy}}</span></TimelineItem>
@@ -57,6 +57,7 @@
   import highchartsMore from 'highcharts/highcharts-more';
   import drilldown from 'highcharts-drilldown';
   import macarons from 'echarts/theme/macarons';
+  import countTo from 'vue-count-to';
   // drilldown(highcharts);
   if (!highcharts.Chart.prototype.addSeriesAsDrilldown) {
       drilldown(highcharts);
@@ -132,11 +133,20 @@ export default {
       totalMoney: 0,
       totalTimes: 0,
       totalStudents: 0,
-      split1: 0.5
+      split1: 0.5,
+      // 需要滚动的时间
+
+        duration: 2000,
+
+        // 初始值
+
+        startVal: 0,
+
+        // 最终值
     };
   },
   components: {
-
+    countTo
   },
   methods: {
     // 从数据库获取总体统计数据
@@ -161,7 +171,7 @@ export default {
       });
     },
     getTimesArray() {
-      const path = 'http://192.168.1.43:8001/student/consume/group_consumption/hallTimes';
+      const path ='http://192.168.1.43:8001/student/consume/group_consumption/hallTimes';
       axios({
         url: path,
         method: 'get'
@@ -174,7 +184,7 @@ export default {
       });
     },
     getHallWindowDrill() {
-      const path = 'http://192.168.1.43:8001/student/consume/group_consumption/hallWindowDrill';
+      const path =  'http://192.168.1.43:8001/student/consume/group_consumption/hallWindowDrill';
       axios({
         url: path,
         method: 'get'
@@ -188,7 +198,7 @@ export default {
     },
     // 各个餐厅的消费次数
     getConsumptionList() {
-      const path = 'http://192.168.1.43:8001/student/consume/group_consumption/mealTimes';
+      const path =  'http://192.168.1.43:8001/student/consume/group_consumption/mealTimes';
       axios({
         url: path,
         method: 'get'
@@ -221,7 +231,7 @@ export default {
     },
     // 每个窗口的消费次数
     getWindowNum() {
-      const path = 'http://192.168.1.43:8001/student/consume/group_consumption/windowTimes';
+      const path ='http://192.168.1.43:8001/student/consume/group_consumption/windowTimes';
       axios({
         url:path,
         method: 'get'
@@ -282,7 +292,7 @@ export default {
     },
     // 获取不同性别下每个月的各类消费金额
     getGenderMoney() {
-      const path = 'http://192.168.1.43:8001/student/consume/group_consumption/genderClassify';
+      const path =  'http://192.168.1.43:8001/student/consume/group_consumption/genderClassify';
       axios({
         url: path,
         method: 'get'
@@ -434,7 +444,7 @@ export default {
                 type:'line',
                 smooth: true,
                 data:index['Result']['总额'],
-                color:'#89A54E'
+                color:'#55bb8a'
             },
             {
                 name:'男生',
@@ -448,7 +458,7 @@ export default {
                 type:'line',
                 smooth: true,
                 data:index['girlResult']['总额'],
-                color:'#ED561B'
+                color:'#FF93A2'
             },
             // {
             //     name:'购物',
@@ -465,7 +475,7 @@ export default {
         }) ;
     },
     initNestChart() {
-      let chart = echarts.init(document.getElementById("myNestEcharts"),'macarons');
+      let chart = echarts.init(document.getElementById("myNestEcharts"));
       chart.setOption({
         backgroundColor: "#ffffff",
         /* title: {
@@ -477,6 +487,7 @@ export default {
           trigger: "item",
           formatter: "{a} <br/>{b}:{c}({d}%)"
         },
+        color:["#ADE1DF","#FFDB5C","#FF9F7F","#67E0E3","#afe39b","#BDB7F0","#FFAFAF","#DFE488","#c0e7db "],
         legend: {
           top:260,
           left:4,
@@ -561,7 +572,8 @@ export default {
         text: '全校各个食堂消费情况',
         color:'red'
       },
-      colors: ['#ED561B', '#FF9655', '#80699B','#4572A7', '#AA4643', '#89A54E', ],
+      colors: ['#ED561B', '#FF9655', '#80699B','#4572A7', '#AA4643', '#009394', ],
+      //colors:["#37A2DA","#FFDB5C","#FF9F7F","#67E0E3","#ED561B","#FF9655"],
       tooltip: {
         useHTML: true,
         pointFormat: '<b>{point.name}:</b> {point.y}次'

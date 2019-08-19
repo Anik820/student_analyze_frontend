@@ -1,5 +1,5 @@
 <template>
-  <div id="boxchart" style="width: 100%;height:800px;"></div>
+  <div id="boxchart" style="width: 1200px;height:750px;"></div>
 </template>
 <script>
 import online_api from "@/api/online_api";

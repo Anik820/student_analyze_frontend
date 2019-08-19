@@ -85,7 +85,7 @@ export default {
           bottom:"30px",//组件离容器下侧的距离,百分比字符串或整型数字
     },
     title: {
-        text: '学生必修课成绩'
+        text: '各学院必修课数目'
     },
     tooltip: {
         useHTML: true,
@@ -179,7 +179,7 @@ export default {
           bottom:"30px",//组件离容器下侧的距离,百分比字符串或整型数字
     },
     title: {
-        text: '学生必修课成绩'
+        text: '必修课类型'
     },
     tooltip: {
         useHTML: true,
@@ -257,7 +257,8 @@ export default {
         '#516b91',
     ],
 	title: {
-		text: '各班级分数列表'
+        // text: '各班级成绩情况'
+        text:""
 	},
 	
 	xAxis: {

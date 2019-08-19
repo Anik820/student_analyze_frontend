@@ -4,7 +4,7 @@
       <BreadcrumbItem to="/onlineindex">上网行为</BreadcrumbItem>
       <BreadcrumbItem to="/online_network">校园热力图</BreadcrumbItem>
     </Breadcrumb>
-    <Content :style="{padding: '100px 300px'}">
+    <Content :style="{padding: '50px 150px'}">
       <Card class="showcard">
           <HeatMap></HeatMap>
       </Card>
@@ -32,7 +32,7 @@ export default {
   top: -33px;
 }
 .demo-carouse2 {
-  height: 600px;
+  height: 300px;
   line-height: 530px;
   text-align: center;
   color: #fff;
@@ -40,8 +40,8 @@ export default {
   background: #b4dd41;
 }
 .showcard {
-  width:120%;
-  height: 750px;
-  margin: -40px 0px 0px -120px;
+  width:1450px;
+  height: 700px;
+  margin: -20px 0px 0px -60px;
 }
 </style>

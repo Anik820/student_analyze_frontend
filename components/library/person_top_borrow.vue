@@ -1,10 +1,6 @@
 <template>
   <!-- <div ref="tt" style="height:700px" @click="changeColor2"> -->
-  <div id="top" style="width:100%;height:700px"></div>
-  <!-- <chart ref="test" :options="testoptions()" style="width:800px;height:500px"></chart>  -->
-  <!-- </div> -->
-  <!-- <div id="myChart" :style="{width: '1200px', height: '400px'}"></div> -->
-  <!-- <div ref="myChart" :style="{width: '500px', height: '400px'}"> -->
+  <div id="top" style="width:100%;height:530px"></div>
 </template>
 
 <script>
@@ -48,6 +44,7 @@ export default {
             data: ["借阅数量"]
           },
           grid: {
+            top:"3%",
             left: "3%",
             right: "4%",
             bottom: "3%",

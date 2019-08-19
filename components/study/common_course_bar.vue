@@ -1537,7 +1537,7 @@ export default {
         
         mychart1.setOption({
           title: {
-            text: "学院专业通识课成绩统计"
+            // text: "学院专业通识课成绩统计"
           },
           tooltip: {
             trigger: "axis"

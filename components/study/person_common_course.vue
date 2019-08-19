@@ -12,26 +12,33 @@ import api from "../../api/study_api";
 import echarts from "echarts";
 import Highcharts from "highcharts";
 import highchartsMore from "highcharts/highcharts-more";
+import Bus from '@/components/bus.js'
 highchartsMore(Highcharts);
 
 export default {
   data() {
-    return {};
+    return {
+      stuno:[],
+      init_count:0,
+    };
   },
   mounted() {
     this.init();
     const that = this;
-    window.onresize = () => {
-      //  根据窗口大小调整曲线大小
-      let mychart1 = this.$echarts.init(
-        document.getElementById("tongshiScorePer")
-      );
-      mychart1.resize();
-    };
+    // 用$on事件来接收参数
+    Bus.$on('val', (data) => {
+      this.stuno = data
+      this.init()
+    })
   },
   methods: {
     init() {
-      api.gettongshiScore_per("201600101002").then(res => {
+      if(this.init_count==0){
+        this.stuno = "201600101011";
+        this.init_count=1;
+      }
+      
+          api.gettongshiScore_per(this.stuno).then(res => {
         Highcharts.chart("tongshiScorePer", {
           chart: {
             polar: true,
@@ -44,7 +51,8 @@ export default {
             '#9fcdfd',
           ],//设置图表颜色
           title: {
-            text: "通识课成绩",
+            // text: "通识课成绩",
+            text:"",
             x: -80
           },
           pane: {
@@ -80,7 +88,8 @@ export default {
           ]
         });
       });
-      mychart1.resize();
+      
+      
     }
   }
 };

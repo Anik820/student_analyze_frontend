@@ -8,40 +8,47 @@
 import api from "../../api/study_api";
 import Highcharts from "highcharts";
 import highchartsMore from "highcharts/highcharts-more";
-
+import Bus from '@/components/bus.js'
 highchartsMore(Highcharts);
 
 export default {
   data() {
     return {
       datalist: [],
-      xAxislist: []
+      xAxislist: [],
+      stuno:[],
+      init_count:0,
     };
   },
   mounted() {
     this.init();
     const that = this;
-    window.onresize = () => {
-      //  根据窗口大小调整曲线大小
-      let mychart1 = this.$echarts.init(
-        document.getElementById("per_pubelect")
-      );
-      mychart1.resize();
-    };
+    // 用$on事件来接收参数
+    Bus.$on('val', (data) => {
+      this.stuno = data
+      this.init()
+    })
   },
   methods: {
     init() {
-      this.chartproduce();
+      if(this.stuno!=null){
+        this.chartproduce();
+      }
+      
     },
     chartproduce() {
-      api.getperson_publicelective("201600101002").then(res => {
+      if(this.init_count==0){
+        this.stuno = "201600101011";
+        this.init_count=1;
+      }
+      api.getperson_publicelective(this.stuno).then(res => {
         for (var i = 0; i < res.courselist.length; i++) {
           this.xAxislist[i] = res.courselist[i];
           this.datalist[i] = res.scorelist[i];
         }
         Highcharts.chart("per_pubelect", this.option());
       });
-      mychart1.resize();
+      
     },
 
     option() {
@@ -54,7 +61,8 @@ export default {
         }, //去掉水印
         colors: ["#9fcdfd"], //设置图表颜色
         title: {
-          text: "公选课成绩情况"
+          // text: "公选课成绩情况"
+          text:""
         },
         subtitle: {
           text: ""

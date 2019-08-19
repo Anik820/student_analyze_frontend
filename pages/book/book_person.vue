@@ -8,22 +8,22 @@
       <Content :style="{padding: '0 60px'}">
           <div class="main">
             
-            <Card :bordered="false" style="height:500px;width:70%;float:left;"> 
+            <Card :bordered="false" style="height:600px;width:70%;float:left;"> 
                 <p slot="title">个人借阅量与学校、学院平均借阅量</p>
                 <div>
                   <person_avg_compare></person_avg_compare>
                 </div>
             </Card>
-            <Card :bordered="false" style="height:830px;width:28%;float:right;">
+            <Card :bordered="false" style="height:600px;width:28%;float:right;">
                 <p slot="title">全校借阅排行榜top10</p>
                 <div>
                   <person_top_borrow></person_top_borrow>
                 </div>
             </Card>
-            <Card :bordered="false" style="width:70%;height:300px;float:left;margin-top:30px;margin:30px auto">
+            <!-- <Card :bordered="false" style="width:70%;height:250px;float:left;margin-top:30px;margin:30px auto">
                 <p slot="title">阅读建议</p>
                 <p>Content of no border type. Content of no border type. Content of no border type. Content of no border type. </p>
-            </Card>
+            </Card> -->
           </div> 
         </Content>
     </Layout>
@@ -46,8 +46,7 @@ export default {
     }
   },
   mounted(){
-    this.init();
-    console.log(this.echartdata);
+    
     const that = this
 		    window.onresize = () => {//  根据窗口大小调整曲线大小
             let mychart1 = this.$echarts.init(document.getElementById('top'));

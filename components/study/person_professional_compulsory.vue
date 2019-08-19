@@ -1,10 +1,5 @@
 <template>
-  <!-- <div ref="tt" style="height:700px" @click="changeColor2"> -->
-  <div id="zhuanyebiScorePer" style="width:100%;height:500px"></div>
-  <!-- <chart ref="test" :options="testoptions()" style="width:800px;height:500px"></chart>  -->
-  <!-- </div> -->
-  <!-- <div id="myChart" :style="{width: '1200px', height: '400px'}"></div> -->
-  <!-- <div ref="myChart" :style="{width: '500px', height: '400px'}"> -->
+  <div id="zhuanyebiScorePer" style="width:100%;height:500px"></div> 
 </template>
 
 <script>
@@ -12,27 +7,35 @@ import api from "../../api/study_api";
 import echarts from "echarts";
 import Highcharts from "highcharts";
 import highchartsMore from "highcharts/highcharts-more";
-import '@/color/study_3colors.js'
 highchartsMore(Highcharts);
+import Bus from '@/components/bus.js'
 
 export default {
   data() {
-    return {};
+    return {
+      stuno:null,
+      init_count:0,
+    };
   },
   mounted() {
     this.init();
     const that = this;
-    window.onresize = () => {
-      //  根据窗口大小调整曲线大小
-      let mychart1 = this.$echarts.init(
-        document.getElementById("zhuanyebiScorePer")
-      );
-      mychart1.resize();
-    };
+  
+     // 用$on事件来接收参数
+    Bus.$on('val', (data) => {
+      this.stuno = data
+      this.init()
+    })
+    
   },
   methods: {
     init() {
-      api.getzhuanyebiScore_per("201600101002", 16).then(res => {
+      if(this.init_count==0){
+        this.stuno = "201600101011";
+        this.init_count=1;
+      }
+    if(this.stuno!==null){
+        api.getzhuanyebiScore_per(this.stuno, 16).then(res => {
         Highcharts.chart("zhuanyebiScorePer", {
           chart: {
             type: "column"
@@ -49,7 +52,8 @@ export default {
             // '#c3eab4',
           ],//设置图表颜色
           title: {
-            text: "学生必修课成绩对比"
+            // text: "学生必修课成绩对比"
+            text:" "
           },
 
           xAxis: {
@@ -94,7 +98,9 @@ export default {
           ]
         });
 	  });
-	  mychart1.resize();
+    }
+      
+	  // mychart1.resize();
     }
   }
 };

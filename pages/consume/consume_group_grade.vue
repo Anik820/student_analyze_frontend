@@ -311,6 +311,7 @@ export default {
           show:true,
           data: ['餐饮', '购物', '生活']
         },
+        color:["#37A2DA","#FFDB5C","#FF9F7F","#67E0E3",],
         angleAxis: {
           
         },
@@ -371,6 +372,7 @@ export default {
         tooltip: {
             // trigger: 'axis'
         },
+        color:["#FFDB5C","#FF9F7F","#37A2DA","#67E0E3"],
         legend: {
             x: 'center',
             top: 20,
@@ -500,7 +502,8 @@ export default {
             text: '各年级消费金额'
         },
         legend: {},
-        //color:["#FFDB5C","#FF9F7F","#37A2DA","#67E0E3"],
+        color:["#FFDB5C","#FF9F7F","#37A2DA","#67E0E3"],
+        //color:["#FEE7C8","#97E9E7","#FFE658","#F78992"],
         tooltip: {
             //trigger: 'axis',
             showContent: false,

@@ -343,6 +343,7 @@ export default {
             type: 'shadow'
           }
         },
+        color:["#74cbe7","#FFDB5C","#FF9F7F","#67E0E3",],
         legend: {
           top:20,
           left:370,
@@ -395,6 +396,7 @@ export default {
           left: "left",
           top: 5,
         },
+        color:["#ADE1DF","#FFDB5C","#FF9F7F","#67E0E3","#afe39b","#BDB7F0","#FFAFAF","#DFE488"],
         tooltip: {
           trigger: "item",
           formatter: "{a} <br/>{b}:{c}({d}%)"
@@ -600,6 +602,7 @@ export default {
             }
           }
         },
+        color:["#74cbe7","#FFDB5C","#FF9F7F","#67E0E3",],
         legend: {
           top:20,
           data: ['月总消费', '生活消费', '餐饮消费', '购物消费', '消费趋势']
@@ -768,6 +771,7 @@ export default {
             top: 10,
             left: 'center'
           },
+          
           series : [
               {
                   name:'消费指数',
@@ -778,7 +782,7 @@ export default {
                   axisLine: {            // 坐标轴线
                       lineStyle: {       // 属性lineStyle控制线条样式
                           width: 20,
-                          color: [[0.2,'#c23531'],[0.4,'#2f4554'],[0.6,'#61a0a8'],[0.8,'#d48265'],[1,'#ca8622']], // 设置每个坐标间隔中的颜色
+                          color: [[0.2,'#F49A9C'],[0.4,'#74cbe7'],[0.6,'#67E0E3'],[0.8,'#FFDB5C'],[1,'#FF9F7F']], // 设置每个坐标间隔中的颜色
                       }
                   },
                   axisTick: {            // 坐标轴小标记

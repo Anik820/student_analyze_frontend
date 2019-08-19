@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="trailmap" style="width: 1600px;height:800px;"></div>
+    <div id="trailmap" style="width: 1200px;height:750px;"></div>
   </div>
 </template>
 <script>

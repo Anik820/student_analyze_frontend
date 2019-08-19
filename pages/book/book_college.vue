@@ -459,7 +459,9 @@ export default {
         this.aa();
       });
     },
-    init() {},
+    init() {
+      this.changeData(["电视学院", 2016]);
+    },
     aa() {
       let mychart1 = this.$echarts.init(document.getElementById("hotbookcollege"));
       let chart = this.$echarts.init(document.getElementById("collegedrill"));

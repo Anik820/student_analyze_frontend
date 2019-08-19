@@ -1,14 +1,14 @@
 <template>
 <div>
-<col>
+
 <div id="bubble1" style="width:32%;height:700px;float:left"></div>
-</col>
-<col>
-<div id="heatmap" style="width:33%;height:700px;float:left;"></div>
-</col>
-<col>
+
+
+<div id="heatmap" style="width:33%;height:670px;float:left;"></div>
+
+
 <div id="bubble2" style="width:33%;height:700px;float:left"></div>
-</col>
+
 </div>
 </template>
 <script>

@@ -86,7 +86,8 @@ export default {
             "#686eca"
           ],//设置图表颜色
           title: {
-            text: "各学院课程成绩比对"
+            // text: "各学院课程成绩比对"
+            text:""
           },
           subtitle: {
             text: ""
